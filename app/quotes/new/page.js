@@ -1,0 +1,1 @@
+import QuoteForm from '@/components/quote-form'; export default function NewQuotePage(){ return (<div><h1 className='text-2xl font-semibold mb-4'>New Quotation</h1><QuoteForm/></div>); }

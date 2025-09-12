@@ -1,0 +1,1 @@
+import clsx from 'clsx'; export default function Textarea({className,...p}){return <textarea className={clsx('input min-h-[120px]',className)} {...p}/>;}

@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+  color-scheme: dark;
+}
+html,
+body {
+  @apply bg-background text-white;
+}
+.container {
+  @apply max-w-6xl mx-auto px-4;
+}
+.card {
+  @apply bg-surface rounded-2xl shadow-soft border border-white/5;
+}
+.label {
+  @apply text-sm text-white/70;
+}
+.input {
+  @apply w-full bg-black/20 border border-white/10 rounded-xl px-3 py-2 outline-none focus:ring-2 focus:ring-accent;
+}
+.btn {
+  @apply inline-flex items-center justify-center rounded-2xl px-4 py-2 font-medium transition;
+}
+.btn-primary {
+  @apply bg-accent/90 hover:bg-accent text-black;
+}
+.text-primary {
+  @apply text-accent;
+}
+.btn-ghost {
+  @apply bg-white/5 hover:bg-white/10;
+}
+.table {
+  @apply w-full text-sm;
+}
+.table th {
+  @apply text-left font-semibold text-white/70 py-2;
+}
+.table td {
+  @apply py-3 border-t border-white/10;
+}
+.section-title {
+  @apply text-lg font-semibold mb-3;
+}
+
+/* --- Softer dark selects --- */
+select,
+select option {
+  color-scheme: dark;
+}
+select option {
+  background-color: #0b0d12;
+  color: #e6e7eb;
+}
+select option[disabled],
+select option[value=""] {
+  color: #9ca3af;
+}
+
+
+/* === Responsive helpers (added) === */
+@layer utilities {
+  .truncate-2lines {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .hide-scrollbar::-webkit-scrollbar { display: none; }
+  .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+}
+
+/* Make images and embeds scale within cards/forms */
+img, video, canvas { max-width: 100%; height: auto; }
+
+/* Tables: allow horizontal scroll on small screens without breaking layouts */
+.table-wrap { overflow-x: auto; }
+.table-wrap table { width: 100%; border-collapse: collapse; }
+.table-wrap th, .table-wrap td { white-space: nowrap; }
+
+/* Inputs stack on small screens if parent uses .form-row */
+@media (max-width: 640px) {
+  .form-row { display: grid; grid-template-columns: 1fr; gap: 0.75rem; }
+}
+
+
+/* Drawer/sidebar spacing fixes */
+.drawer-sidebar { margin: 0 !important; padding: 0 !important; }
+.drawer-sidebar > *:first-child { margin-top: 0 !important; padding-top: 0 !important; }
+
+
+/* Make sidebar fill the drawer width and remove sticky/height on mobile drawer */
+.drawer-sidebar aside {
+  position: static !important;
+  top: auto !important;
+  height: 100% !important;
+  width: 100% !important;
+}

@@ -1,0 +1,1 @@
+import clsx from 'clsx'; export default function Input({className,...p}){return <input className={clsx('input',className)} {...p}/>;}

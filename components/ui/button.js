@@ -1,0 +1,1 @@
+import clsx from 'clsx'; export default function Button({className,variant='primary',...p}){const base='btn '+(variant==='primary'?'btn-primary':'btn-ghost');return <button className={clsx(base,className)} {...p}/>;}
